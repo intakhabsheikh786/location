@@ -21,7 +21,9 @@
         }
 
         function showPosition(position) {
-            postData('https://api-attendance-test.herokuapp.com/api/location-tracker', { latitude: "111", longitude: "222" })
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            postData('https://api-attendance-test.herokuapp.com/api/location-tracker', { latitude, longitude })
                 .then(data => {
                     console.log(data); // JSON data parsed by `data.json()` call
                 });
